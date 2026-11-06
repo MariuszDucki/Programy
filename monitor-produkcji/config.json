@@ -1,0 +1,43 @@
+{
+  "plant_name": "Zakład – hala produkcyjna",
+  "shifts": [
+    {"name": "I", "start": "06:00", "end": "14:00"},
+    {"name": "II", "start": "14:00", "end": "22:00"},
+    {"name": "III", "start": "22:00", "end": "06:00"}
+  ],
+  "lines": [
+    {"id": "L1", "name": "Linia 1 – Jogurty kubek 150g", "product": "Jogurt naturalny 150g", "ideal_rate_per_min": 240, "target_oee": 0.75},
+    {"id": "L2", "name": "Linia 2 – Napoje butelka 250ml", "product": "Napój jogurtowy 250ml", "ideal_rate_per_min": 180, "target_oee": 0.72},
+    {"id": "L3", "name": "Linia 3 – Desery 4-pak", "product": "Deser waniliowy 4x125g", "ideal_rate_per_min": 90, "target_oee": 0.70},
+    {"id": "L4", "name": "Linia 4 – Serki homogenizowane", "product": "Serek 140g", "ideal_rate_per_min": 200, "target_oee": 0.75}
+  ],
+  "states": {
+    "RUN":        {"label": "Praca",               "category": "run"},
+    "STOP":       {"label": "Postój nieplanowany", "category": "unplanned"},
+    "STARVED":    {"label": "Brak materiału",      "category": "unplanned"},
+    "BLOCKED":    {"label": "Blokada wyjścia",     "category": "unplanned"},
+    "CHANGEOVER": {"label": "Przezbrojenie",       "category": "unplanned"},
+    "CIP":        {"label": "Mycie CIP",           "category": "planned"},
+    "PLANNED":    {"label": "Postój planowany",    "category": "planned"},
+    "NO_ORDER":   {"label": "Brak zlecenia",       "category": "planned"}
+  },
+  "stop_reasons": [
+    "Awaria mechaniczna",
+    "Awaria elektryczna",
+    "Zacięcie / zator",
+    "Brak opakowań",
+    "Brak produktu z procesu",
+    "Brak operatora",
+    "Regulacja / ustawienia",
+    "Kontrola jakości",
+    "Zmiana etykiety / folii",
+    "Inne"
+  ],
+  "alarms": {
+    "unplanned_stop_minutes": 5,
+    "low_speed_ratio": 0.8,
+    "low_speed_window_minutes": 5,
+    "scrap_rate_max": 0.03,
+    "scrap_window_minutes": 15
+  }
+}
